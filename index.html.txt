@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo Tintas - Soluções B2B para Oficinas e Frotistas</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#463c76', // Cor baseada no texto "AUTOMOTIVAS" do logo
+                            cyan: '#41bac1',   // Cor baseada no "TINTAS" do logo
+                            pink: '#e82a82',   // Respingos rosa
+                            orange: '#f68121', // Respingos laranja
+                            dark: '#111827',   // Fundo corporativo escuro
+                            gray: '#1f2937',   // Fundo de cards
+                            light: '#f8fafc'   // Fundo claro de respiro
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efeito de logos em escala de cinza que ganham cor no hover */
+        .grayscale-hover {
+            filter: grayscale(100%) opacity(0.7);
+            transition: all 0.3s ease;
+        }
+        .grayscale-hover:hover {
+            filter: grayscale(0%) opacity(1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-brand-light">
+
+    <!-- HEADER SIMPLIFICADO -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo Imagem Oficial com Fallback de Segurança -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <img src="logo-tudo-tintas.jpg" alt="Logo Tudo Tintas" class="h-16 w-auto object-contain drop-shadow-sm scale-110 origin-left" onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('logo-fallback').classList.remove('hidden');" />
+                    <!-- O fallback abaixo só aparece se a imagem falhar ao carregar -->
+                    <div id="logo-fallback" class="hidden flex flex-col leading-none">
+                        <span class="text-xs font-bold tracking-widest text-brand-purple mb-1">TUDO</span>
+                        <span class="text-2xl font-black text-brand-cyan uppercase tracking-tighter">TINTAS<span class="text-brand-pink">.</span></span>
+                        <span class="text-[0.6rem] font-bold tracking-widest text-brand-purple mt-0.5 uppercase">Automotivas B2B</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#autoridade" class="text-gray-600 hover:text-brand-purple font-medium text-sm transition-colors">Por que nós?</a>
+                    <a href="#solucoes" class="text-gray-600 hover:text-brand-purple font-medium text-sm transition-colors">Soluções In-House</a>
+                    <a href="#infraestrutura" class="text-gray-600 hover:text-brand-purple font-medium text-sm transition-colors">Nossa Rede</a>
+                </div>
+                <div>
+                    <!-- Botão WhatsApp Atualizado -->
+                    <a href="https://wa.me/5511947639076?text=Ol%C3%A1%2C%20vim%20da%20pagina%20da%20Tudo%20tintas%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-brand-purple hover:bg-brand-purple/90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-purple">
+                        Falar com Consultor
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SEÇÃO 1: HERO SECTION -->
+    <section class="relative pt-20 pb-32 lg:pt-36 lg:pb-40 overflow-hidden flex items-center min-h-[90vh]">
+        <!-- Imagem de Fundo (Estufa de Pintura/Oficina Premium) -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1605273397397-51f471015fc4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Estufa de pintura automotiva" class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-brand-dark/85 mix-blend-multiply"></div>
+            <!-- Gradiente para dar destaque ao texto -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="lg:w-2/3">
+                <span class="inline-block py-1 px-3 rounded-full bg-brand-purple/20 text-brand-cyan border border-brand-cyan/30 text-xs font-bold tracking-wider mb-6 uppercase">
+                    Para oficinas de alto fluxo, frotistas e indústrias
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
+                    A Engenharia de Cores e Logística Que o Seu Negócio Precisa <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-cyan to-brand-purple">Para Escalar.</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl leading-relaxed">
+                    Não fornecemos apenas tintas. Estruturamos o seu laboratório interno, garantimos a precisão da cor e entregamos com a velocidade que o seu pátio exige. Tudo com a solidez de 12 anos de mercado.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Botão WhatsApp Atualizado -->
+                    <a href="https://wa.me/5511947639076?text=Ol%C3%A1%2C%20vim%20da%20pagina%20da%20Tudo%20tintas%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="inline-flex justify-center items-center px-8 py-4 border border-transparent text-base font-bold rounded-md text-white bg-brand-cyan hover:bg-[#34a0a7] shadow-lg shadow-brand-cyan/30 transition-all transform hover:-translate-y-0.5">
+                        Agendar Consultoria Técnica
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center gap-3 text-sm text-gray-400 font-medium">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gray-600 border-2 border-brand-dark flex items-center justify-center text-xs text-white">SP</div>
+                        <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-brand-dark flex items-center justify-center text-xs text-white">GR</div>
+                        <div class="w-8 h-8 rounded-full bg-gray-400 border-2 border-brand-dark flex items-center justify-center text-xs text-white">OS</div>
+                    </div>
+                    <span>Atendendo as maiores operações da Grande São Paulo.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 2: A DOR E A NOSSA AUTORIDADE -->
+    <section id="autoridade" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mb-6 leading-tight">
+                        Tempo de Pátio é Dinheiro Perdido. <span class="text-brand-purple">Nós Resolvemos Isso.</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Sabemos que o maior gargalo de uma grande operação de funilaria e pintura é a ineficiência logística e o retrabalho no acerto de cores. Há mais de <strong>12 anos</strong>, a <span class="font-bold text-brand-cyan">Tudo Tintas</span> atua como parceira estratégica das maiores oficinas e frotistas do estado.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <!-- Bullet 1 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-brand-purple/10 text-brand-purple">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-900">Logística Imbatível</h3>
+                                <p class="mt-1 text-gray-600">5 centros de distribuição estratégicos cobrindo 100% da Grande São Paulo.</p>
+                            </div>
+                        </div>
+                        <!-- Bullet 2 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-brand-cyan/10 text-brand-cyan">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-900">Solidez Comprovada</h3>
+                                <p class="mt-1 text-gray-600">Mais de uma década garantindo suprimento contínuo, sem rupturas de estoque.</p>
+                            </div>
+                        </div>
+                        <!-- Bullet 3 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-md bg-brand-orange/10 text-brand-orange">
+                                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-900">Alta Performance</h3>
+                                <p class="mt-1 text-gray-600">Foco na rentabilidade da sua operação, reduzindo desperdícios e otimizando o tempo da sua equipe.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand-purple/20 to-transparent z-10"></div>
+                    <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Frota e logística" class="w-full h-[500px] object-cover" />
+                    <!-- Badge sobre a imagem -->
+                    <div class="absolute bottom-6 left-6 z-20 bg-white p-4 rounded-xl shadow-lg border border-gray-100 flex items-center gap-4">
+                        <div class="text-brand-cyan font-black text-4xl">+12</div>
+                        <div class="text-sm font-bold text-gray-800 leading-tight">Anos de<br>Mercado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 3: SOLUÇÕES CORPORATIVAS -->
+    <section id="solucoes" class="py-24 bg-brand-dark relative overflow-hidden">
+        <!-- Padrão de fundo discreto -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                    Estrutura de Nível Industrial,<br>Direto na Sua Empresa.
+                </h2>
+                <p class="text-xl text-gray-400">
+                    Conheça o modelo de parceria Tudo Tintas B2B.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Card 1 (Destaque Principal) -->
+                <div class="bg-gradient-to-br from-brand-gray to-brand-dark border border-brand-purple/30 rounded-2xl p-8 relative overflow-hidden group hover:border-brand-cyan/50 transition-colors">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/10 rounded-bl-full -mr-10 -mt-10 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-brand-purple/20 rounded-xl flex items-center justify-center mb-6 border border-brand-purple/30">
+                        <!-- Ícone: Máquina / Engrenagens -->
+                        <svg class="w-7 h-7 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Laboratório In-House</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Nós montamos a estrutura completa dentro da sua oficina. Fornecemos máquina de mistura de tintas, computador com software de formulação e balança de precisão. Tenha autonomia total.
+                    </p>
+                    <div class="mt-4 inline-flex items-center text-brand-cyan text-sm font-semibold uppercase tracking-wider">
+                        Destaque Principal
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-brand-gray border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition-colors">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
+                        <!-- Ícone: Paleta / Conta-gotas -->
+                        <svg class="w-7 h-7 text-brand-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Engenharia de Cor Especializada</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Não dependa da sorte. Disponibilizamos técnicos coloristas internos e de campo altamente capacitados para garantir a colorimetria exata, evitando retrabalhos e atrasos na entrega dos veículos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-brand-gray border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition-colors">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
+                        <!-- Ícone: Equipe / Escudo -->
+                        <svg class="w-7 h-7 text-brand-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Suporte e Padronização</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Elevamos o padrão visual e técnico da sua operação. Oferecemos suporte técnico de excelência contínuo e fornecemos uniformes padronizados para a sua equipe de pintura.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-brand-gray border border-gray-700 rounded-2xl p-8 hover:border-gray-500 transition-colors">
+                    <div class="w-14 h-14 bg-gray-800 rounded-xl flex items-center justify-center mb-6">
+                        <!-- Ícone: Caminhão / Relógio -->
+                        <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Logística Expressa B2B</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Sua cabine não pode parar. Nossa frota própria, pulverizada em 5 unidades estratégicas, garante reposição de materiais em tempo recorde para grandes volumes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4: QUALIDADE COMPROVADA (MARCAS) -->
+    <section class="py-16 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl font-bold text-brand-dark mb-2">Homologados pelas Melhores Marcas do Mundo</h2>
+                <p class="text-gray-500">Trabalhamos com linhas de alta performance que garantem rentabilidade e acabamento premium.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 lg:gap-20">
+                <img src="logo-farben.svg" alt="Farben" class="h-8 md:h-12 w-auto object-contain grayscale-hover cursor-pointer" />
+                <img src="skylack-logo.png" alt="Skylack" class="h-7 md:h-10 w-auto object-contain grayscale-hover cursor-pointer" />
+                <img src="logo_wanda_2016.png" alt="Wanda" class="h-10 md:h-14 w-auto object-contain grayscale-hover cursor-pointer" />
+                <img src="sikkens-logo.svg" alt="Sikkens" class="h-6 md:h-9 w-auto object-contain grayscale-hover cursor-pointer" />
+                <img src="max-rubber-logo.png" alt="Max Rubber" class="h-12 md:h-16 w-auto object-contain grayscale-hover cursor-pointer" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 4.5: CLIENTES B2B (PROVA SOCIAL) -->
+    <section class="py-20 bg-gray-50 border-b border-gray-200 relative overflow-hidden">
+        <!-- Elemento de fundo sutil -->
+        <div class="absolute -right-20 top-10 w-64 h-64 bg-brand-cyan/5 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 bottom-10 w-64 h-64 bg-brand-purple/5 rounded-full blur-3xl"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-green-100 text-green-700 border border-green-200 text-xs font-bold tracking-wider mb-4 uppercase">
+                    Parcerias de Sucesso
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mb-4">
+                    Grandes Operações que Confiam na Nossa Logística
+                </h2>
+                <p class="text-lg text-gray-600">
+                    Abastecemos as oficinas mais exigentes de São Paulo com precisão de cor e agilidade de entrega.
+                </p>
+            </div>
+
+            <!-- Destaque Concessionárias -->
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <div class="bg-white px-8 py-5 rounded-xl shadow-sm border border-brand-purple/20 flex items-center justify-center gap-4">
+                    <svg class="w-8 h-8 text-brand-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <div class="text-left">
+                        <p class="text-xs text-gray-500 font-bold uppercase tracking-wider">Atendimento Especializado</p>
+                        <p class="text-xl font-black text-brand-dark">Grupo CAOA & TOYOTA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Oficinas Premium -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Oficina Desamassa</h4>
+                        <p class="text-sm text-gray-500 mt-1">4 Unidades Estratégicas</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Jardim Anália</h4>
+                        <p class="text-sm text-gray-500 mt-1">Tatuapé e Cotia</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Oficina Romma</h4>
+                        <p class="text-sm text-gray-500 mt-1">Casa Verde</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Speed Clean</h4>
+                        <p class="text-sm text-gray-500 mt-1">Vila Leopoldina</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Milenium</h4>
+                        <p class="text-sm text-gray-500 mt-1">Perdizes</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Oficina Damy</h4>
+                        <p class="text-sm text-gray-500 mt-1">Vila Mariana</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-lg border border-gray-100 shadow-sm hover:border-brand-cyan/40 hover:shadow-md transition-all flex items-start gap-3 md:col-span-1 lg:col-span-2">
+                    <div class="mt-1 text-brand-cyan">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 leading-tight">Oficina Scattini</h4>
+                        <p class="text-sm text-gray-500 mt-1">Centro Automotivo</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 5: NOSSA REDE (INFRAESTRUTURA) -->
+    <section id="infraestrutura" class="py-24 bg-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-brand-dark mb-4">A Maior Rede de Cobertura de São Paulo</h2>
+                <p class="text-xl text-gray-600">Nossa infraestrutura física garante que sua empresa nunca fique desabastecida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Destaque Matriz -->
+                <div class="md:col-span-2 lg:col-span-3 bg-white rounded-2xl shadow-sm border border-brand-cyan/20 p-8 flex flex-col md:flex-row items-center justify-between border-l-4 border-l-brand-cyan relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-cyan/5 rounded-full blur-2xl"></div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="px-2.5 py-1 rounded text-[10px] font-bold bg-brand-cyan text-white uppercase tracking-wider">Sede Corporativa</span>
+                            <h3 class="text-2xl font-bold text-gray-900">MATRIZ POMPEIA</h3>
+                        </div>
+                        <p class="text-gray-500 text-lg">Rua Coriolano, 86 - Pompeia, São Paulo - SP</p>
+                        <p class="text-gray-400 text-sm mt-1">O Coração da nossa Operação B2B</p>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <a href="https://maps.app.goo.gl/link-matriz" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 rounded-md text-sm font-semibold text-gray-700 bg-white hover:bg-gray-50 hover:border-brand-cyan transition-colors">
+                            <svg class="w-5 h-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Filiais -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Tudo Tintas Imirim</h3>
+                    <p class="text-gray-500 text-sm mb-6">Av. Imirim, 1741 - Imirim<br>São Paulo - SP</p>
+                    <a href="#" class="text-sm font-semibold text-brand-purple hover:text-brand-cyan inline-flex items-center gap-1 transition-colors">
+                        Ver no Google Maps <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Encanto das Tintas Pirituba</h3>
+                    <p class="text-gray-500 text-sm mb-6">R. Joaquim Oliveira Freitas, 501 - V. Mangalot<br>São Paulo - SP</p>
+                    <a href="#" class="text-sm font-semibold text-brand-purple hover:text-brand-cyan inline-flex items-center gap-1 transition-colors">
+                        Ver no Google Maps <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Encanto das Tintas Osasco</h3>
+                    <p class="text-gray-500 text-sm mb-6">Av. Diogo Antônio Feijó, 270 - Km 18<br>Osasco - SP</p>
+                    <a href="#" class="text-sm font-semibold text-brand-purple hover:text-brand-cyan inline-flex items-center gap-1 transition-colors">
+                        Ver no Google Maps <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow">
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Tudo Tintas Guarulhos</h3>
+                    <p class="text-gray-500 text-sm mb-6">R. Vitória, 278 - V. Adelaide Perella<br>Guarulhos - SP</p>
+                    <a href="#" class="text-sm font-semibold text-brand-purple hover:text-brand-cyan inline-flex items-center gap-1 transition-colors">
+                        Ver no Google Maps <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+                
+                <!-- Box Vazio para manter o grid alinhado ou CTA extra -->
+                <div class="bg-brand-purple/5 rounded-xl border border-brand-purple/10 p-6 flex items-center justify-center text-center">
+                    <div>
+                        <p class="font-bold text-brand-purple mb-1">Precisa de reposição urgente?</p>
+                        <p class="text-sm text-gray-600">Nossa frota atende toda a região metropolitana.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO 6: RODAPÉ E CTA FINAL -->
+    <section id="contato" class="relative bg-brand-purple py-24 overflow-hidden">
+        <!-- Elementos decorativos bg -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-brand-cyan rounded-full opacity-20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-brand-pink rounded-full opacity-20 blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl sm:text-5xl font-extrabold text-white mb-6 tracking-tight">
+                Pronto para Escalar a Capacidade da sua Oficina?
+            </h2>
+            <p class="text-xl text-brand-purple-100 text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Pare de se preocupar com logística e acerto de cor. Deixe a Tudo Tintas gerenciar seus suprimentos para que você possa focar em entregar mais carros com qualidade impecável.
+            </p>
+            
+            <!-- Botão WhatsApp Atualizado CTA Gigante -->
+            <a href="https://wa.me/5511947639076?text=Ol%C3%A1%2C%20vim%20da%20pagina%20da%20Tudo%20tintas%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-5 text-lg font-bold rounded-md text-brand-purple bg-white hover:bg-gray-50 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                Solicitar Visita de um Especialista B2B
+                <svg class="ml-2 -mr-1 w-5 h-5 text-brand-cyan" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+            </a>
+            <p class="mt-4 text-sm text-white/60">Atendimento exclusivo para CNPJ</p>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center gap-2 mb-4 md:mb-0">
+                <span class="text-sm font-bold tracking-widest text-brand-purple uppercase">Tudo</span>
+                <span class="text-lg font-black text-brand-cyan uppercase tracking-tighter">Tintas.</span>
+            </div>
+            <div class="text-gray-500 text-sm text-center md:text-right">
+                <p>&copy; 2026 Tudo Tintas. Todos os direitos reservados. | tudotintas.com.br</p>
+                <p class="mt-1 text-xs">Desenvolvido por <span class="font-bold text-brand-cyan">Iron Code</span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
